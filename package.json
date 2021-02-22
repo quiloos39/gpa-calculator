@@ -1,15 +1,15 @@
 {
   "name": "gpa_calculator",
   "version": "1.0.0",
-  "description": "",
+  "description": "GPA Calculator in React",
   "private": true,
   "scripts": {
-    "test": "webpack serve --config webpack.dev.js",
+    "dev": "webpack serve --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["gpa-calculator", "react"],
+  "author": "Necdet Efe",
+  "license": "GNU General Public License v3.0",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.2",
     "bootstrap": "^4.6.0",
