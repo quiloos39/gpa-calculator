@@ -39,7 +39,7 @@ const SemesterRecord = ({ semester, semesters }) => {
 			</tr>
 		);
 	};
-	const CUMULATIVE_GPA = ({ prevTotalPTS, prevTakenCredits, totalPTS, takenCredits }) => {
+	const CUMULATIVE_GPA = ({ takenCredits,  totalPTS,  prevTakenCredits, prevTotalPTS }) => {
 		
 		return (
 			<tr>
@@ -49,8 +49,8 @@ const SemesterRecord = ({ semester, semesters }) => {
 				<td>
 					<b>Prev.Total</b>
 				</td>
-				<td>0.00</td>
-				<td>0.00</td>
+				<td>{prevTakenCredits.toFixed(2)}</td>
+				<td>{prevTotalPTS.toFixed(2)}</td>
 			</tr>
 		);
 	};
@@ -67,7 +67,8 @@ const SemesterRecord = ({ semester, semesters }) => {
 		);
 	};
 	const Footer = ({ semesters, semester }) => {
-		let beforeSemesters = semesters.splice(0, semesters.indexOf(semester));
+		let beforeSemesters = semesters.slice(0, semesters.indexOf(semester));
+		console.log(semester.semesterNo, semesters, beforeSemesters);
 		let CUM_TAKEN_CREDITS = beforeSemesters.reduce((sum, semester) => sum + semester.takenCredits, 0);
 		let CUM_TOTAL_PTS = beforeSemesters.reduce((sum, semester) => sum + (semester.totalPTS), 0);
 		return (
