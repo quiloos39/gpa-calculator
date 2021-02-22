@@ -2,14 +2,8 @@ import React from "react";
 
 const RecordFooter = ({ semester, semesters }) => {
   let prevSemesters = semesters.slice(0, semesters.indexOf(semester));
-  let prevTotalCredits = prevSemesters.reduce(
-    (sum, semester) => sum + semester.totalCredits,
-    0
-  );
-  let prevTotalPoints = prevSemesters.reduce(
-    (sum, semester) => sum + semester.totalPoints,
-    0
-  );
+  let prevTotalCredits = prevSemesters.reduce((sum, semester) => sum + semester.totalCredits, 0);
+  let prevTotalPoints = prevSemesters.reduce((sum, semester) => sum + semester.totalPoints, 0);
 
   const GPA = ({ credits, points }) => {
     return (
@@ -30,8 +24,7 @@ const RecordFooter = ({ semester, semesters }) => {
     return (
       <tr>
         <td>
-          <b>Cum.GPA</b>:{" "}
-          {((points + prevPoints) / (credits + prevCredits) || 0).toFixed(2)}
+          <b>Cum.GPA</b>: {((points + prevPoints) / (credits + prevCredits) || 0).toFixed(2)}
         </td>
         <td>
           <b>Prev.Total</b>

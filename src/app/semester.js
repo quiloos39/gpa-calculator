@@ -18,17 +18,13 @@ class Semester {
 
   get totalPoints() {
     return Array.from(this.courses.values()).reduce(
-      (sum, course) =>
-        sum + course.credit * Grades.get(course.grade).coefficient,
+      (sum, course) => sum + course.credit * Grades.get(course.grade).coefficient,
       0
     );
   }
 
   get totalCredits() {
-    return Array.from(this.courses.values()).reduce(
-      (sum, course) => sum + course.credit,
-      0
-    );
+    return Array.from(this.courses.values()).reduce((sum, course) => sum + course.credit, 0);
   }
 }
 

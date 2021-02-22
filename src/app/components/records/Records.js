@@ -6,14 +6,16 @@ import RecordHead from "./RecordHead";
 const Records = ({ semesters }) => {
   return (
     <>
-      {semesters.map((semester) => (
-        <div key={semester.semesterNo} className="mb-4">
+      {semesters.map(semester => (
+        <div key={semester.semesterNo} className="my-4">
           <h3>Semester {semester.semesterNo + 1}</h3>
-          <table className="table table-borderless table-striped">
-            <RecordHead />
-            <RecordBody courses={Array.from(semester.courses.values())} />
-            <RecordFooter semester={semester} semesters={semesters} />
-          </table>
+          <div className="table-responsive">
+            <table className="table table-borderless table-striped text-nowrap">
+              <RecordHead />
+              <RecordBody courses={Array.from(semester.courses.values())} />
+              <RecordFooter semester={semester} semesters={semesters} />
+            </table>
+          </div>
         </div>
       ))}
     </>

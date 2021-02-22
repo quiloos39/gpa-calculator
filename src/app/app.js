@@ -21,14 +21,14 @@ class App extends React.Component {
     //
   }
   addSemester() {
-    this.setState((state) => {
+    this.setState(state => {
       let semesterNo = ++Semester.semesterCounter;
       state.semesters.set(semesterNo, new Semester(semesterNo));
       return state.semesters;
     });
   }
   removeSemester(semesterNo) {
-    this.setState((state) => {
+    this.setState(state => {
       if (this.state.semesters.size > 1) {
         state.semesters.delete(semesterNo);
       }
@@ -36,13 +36,13 @@ class App extends React.Component {
     });
   }
   addCourse(semesterNo) {
-    this.setState((state) => {
+    this.setState(state => {
       state.semesters.get(semesterNo).newCourse();
       return state.semesters;
     });
   }
   removeCourse(course) {
-    this.setState((state) => {
+    this.setState(state => {
       let semester = state.semesters.get(course.semesterNo);
       if (semester.courses.size > 1) {
         semester.courses.delete(course.courseNo);
@@ -51,7 +51,7 @@ class App extends React.Component {
     });
   }
   updateCourse(course, fieldName, newValue) {
-    this.setState((state) => {
+    this.setState(state => {
       let semester = state.semesters.get(course.semesterNo);
       semester.courses.get(course.courseNo)[fieldName] = newValue;
       return state.semesters;
