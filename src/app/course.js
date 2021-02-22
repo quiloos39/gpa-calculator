@@ -1,11 +1,12 @@
 class Course {
-	constructor(semesterNo, courseNo) {
-		this.name = `Course ${courseNo}`;
-		this.semesterNo = semesterNo;
-		this.courseNo = courseNo;
-		this.credit = 0;
-		this.grade = "AA";
-	}
+  credit = 0.0;
+  grade = "AA";
+
+  constructor(semesterNo, courseNo) {
+    this.name = `Course ${courseNo}`;
+    this.courseNo = courseNo;
+    this.semesterNo = semesterNo;
+  }
 }
 
 export default Course;

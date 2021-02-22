@@ -7,7 +7,10 @@
     "dev": "webpack serve --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js"
   },
-  "keywords": ["gpa-calculator", "react"],
+  "keywords": [
+    "gpa-calculator",
+    "react"
+  ],
   "author": "Necdet Efe",
   "license": "GNU General Public License v3.0",
   "dependencies": {
