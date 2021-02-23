@@ -1,11 +1,10 @@
 import React from "react";
 import Grades from "../../grades";
+import { Typeahead } from "react-bootstrap-typeahead";
+import Courses from "../../courses";
 
-const Courses = ({ courses, removeCourse, updateCourse }) => {
-  return (
-    <div>
-      {courses.map(course => (
-        <div key={course.courseNo} className="row my-3">
+const CoursesForm = ({ courses, removeCourse, updateCourse }) => {
+  /*
           <div className="col-6 mb-3">
             <label>Course Name</label>
             <input
@@ -15,12 +14,32 @@ const Courses = ({ courses, removeCourse, updateCourse }) => {
               onChange={e => updateCourse(course, "name", e.target.value)}
             />
           </div>
+
+  */
+  return (
+    <div>
+      {courses.map(course => (
+        <div key={course.courseNo} className="row my-3">
+          <div className="col-6 mb-3">
+            <label>Course Name</label>
+            <Typeahead
+              placeholder={`Course ${course.courseNo}`}
+              id={`course-${course.courseNo}`}
+              options={Array.from(Courses.keys())}
+              onChange={selection => {
+                if (selection.length > 0) {
+                  updateCourse(course, "name", selection[0]);
+                  updateCourse(course, "credit", Courses.get(selection[0]).credit);
+                }
+              }}
+            />
+          </div>
           <div className="col-6 col-lg-3 mb-3">
             <label>Credits</label>
             <input
               className="form-control"
               type="number"
-              defaultValue="0"
+              value={course.credit}
               onChange={e => updateCourse(course, "credit", Number(e.target.value))}
               disabled={!Grades.get(course.grade).include}
             />
@@ -60,4 +79,4 @@ const Courses = ({ courses, removeCourse, updateCourse }) => {
   );
 };
 
-export default Courses;
+export default CoursesForm;

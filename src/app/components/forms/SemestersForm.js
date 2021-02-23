@@ -1,14 +1,14 @@
 import React from "react";
-import Courses from "./Courses";
+import CoursesForm from "./CoursesForm";
 
-const Semesters = ({ semesters, removeSemester, addCourse, removeCourse, updateCourse }) => {
+const SemestersForm = ({ semesters, removeSemester, addCourse, removeCourse, updateCourse }) => {
   return (
     <>
       {semesters.map(semester => (
         <div key={semester.semesterNo} className="my-4">
           <h2 className="text-danger">Semester {semester.semesterNo + 1}</h2>
           <hr />
-          <Courses
+          <CoursesForm
             courses={Array.from(semester.courses.values())}
             addCourse={addCourse}
             removeCourse={removeCourse}
@@ -37,4 +37,4 @@ const Semesters = ({ semesters, removeSemester, addCourse, removeCourse, updateC
   );
 };
 
-export default Semesters;
+export default SemestersForm;

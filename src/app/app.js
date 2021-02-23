@@ -1,5 +1,5 @@
 import React from "react";
-import Semesters from "./components/forms/Semesters";
+import SemestersForm from "./components/forms/SemestersForm";
 import Semester from "./semester";
 import Records from "./components/records/Records";
 
@@ -62,7 +62,7 @@ class App extends React.Component {
       <div className="container-fluid">
         <div className="row p-xl-5 p-0">
           <div className="col-xl-8">
-            <Semesters
+            <SemestersForm
               semesters={Array.from(this.state.semesters.values())}
               removeSemester={this.removeSemester}
               addCourse={this.addCourse}
