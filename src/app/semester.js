@@ -24,7 +24,10 @@ class Semester {
   }
 
   get totalCredits() {
-    return Array.from(this.courses.values()).reduce((sum, course) => sum + course.credit, 0);
+    return Array.from(this.courses.values()).reduce((sum, course) => {
+      if (Grades.get(course.grade).include) return sum + course.credit;
+      return sum;
+    }, 0);
   }
 }
 

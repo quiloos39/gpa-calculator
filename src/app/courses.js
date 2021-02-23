@@ -8,6 +8,7 @@ Courses.set("ENGL 101", { credit: 4 });
 Courses.set("GPC 100", { credit: 1 });
 Courses.set("CNG 100", { credit: 0 });
 Courses.set("MAT 120", { credit: 5 });
+Courses.set("MAT 100", { credit: 2 });
 Courses.set("PHY 106", { credit: 4 });
 Courses.set("CNG 140", { credit: 4 });
 Courses.set("MAT 260", { credit: 3 });
