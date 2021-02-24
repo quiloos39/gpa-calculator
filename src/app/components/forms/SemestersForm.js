@@ -5,7 +5,7 @@ const SemestersForm = ({ semesters, removeSemester, addCourse, removeCourse, upd
   return (
     <>
       {semesters.map(semester => (
-        <div key={semester.semesterNo} className="my-4">
+        <div key={semester.semesterNo} className="mb-5">
           <h2 className="text-danger">Semester {semester.semesterNo + 1}</h2>
           <hr />
           <CoursesForm
@@ -15,7 +15,7 @@ const SemestersForm = ({ semesters, removeSemester, addCourse, removeCourse, upd
             updateCourse={updateCourse}
           />
           <hr />
-          <div className="my-4">
+          <div className="my-3">
             <button
               type="button"
               className="btn btn-success"

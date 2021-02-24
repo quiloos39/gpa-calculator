@@ -60,8 +60,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="container-fluid">
-        <div className="row p-xl-5 p-0">
-          <div className="col-xl-8">
+        <div className="row py-5">
+          <div className="col-xl-7 offset-xl-1">
             <SemestersForm
               semesters={Array.from(this.state.semesters.values())}
               removeSemester={this.removeSemester}
@@ -70,13 +70,13 @@ class App extends React.Component {
               updateCourse={this.updateCourse}
             />
             <hr />
-            <div className="my-4">
+            <div className="my-3">
               <button className="btn btn-success" onClick={this.addSemester}>
                 Add semester
               </button>
             </div>
           </div>
-          <div className="col-xl-4">
+          <div className="col-xl-3 order-first order-xl-last">
             <Records semesters={Array.from(this.state.semesters.values())} />
           </div>
         </div>

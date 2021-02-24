@@ -4,20 +4,8 @@ import { Typeahead } from "react-bootstrap-typeahead";
 import Courses from "../../courses";
 
 const CoursesForm = ({ courses, removeCourse, updateCourse }) => {
-  /*
-          <div className="col-6 mb-3">
-            <label>Course Name</label>
-            <input
-              className="form-control"
-              type="text"
-              defaultValue={`Course ${course.courseNo}`}
-              onChange={e => updateCourse(course, "name", e.target.value)}
-            />
-          </div>
-
-  */
   return (
-    <div>
+    <>
       {courses.map(course => (
         <div key={course.courseNo} className="row my-3">
           <div className="col-6 mb-3">
@@ -40,6 +28,7 @@ const CoursesForm = ({ courses, removeCourse, updateCourse }) => {
               className="form-control"
               type="number"
               value={course.credit}
+              min={0}
               onChange={e => updateCourse(course, "credit", Number(e.target.value))}
               disabled={!Grades.get(course.grade).include}
             />
@@ -75,7 +64,7 @@ const CoursesForm = ({ courses, removeCourse, updateCourse }) => {
           </div>
         </div>
       ))}
-    </div>
+    </>
   );
 };
 

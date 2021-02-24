@@ -7,7 +7,7 @@ const Records = ({ semesters }) => {
   return (
     <>
       {semesters.map(semester => (
-        <div key={semester.semesterNo} className="my-4">
+        <div key={semester.semesterNo} className="mb-4">
           <h3>Semester {semester.semesterNo + 1}</h3>
           <div className="table-responsive">
             <table className="table table-borderless table-striped text-nowrap">
