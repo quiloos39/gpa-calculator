@@ -1,5 +1,5 @@
 function newCourse() {
-  return { name: '', credit: '', grade: '' };
+  return { id: Date.now(), name: '', credit: '', grade: '' };
 }
 
 function addCourse(semesters, semesterToBeChanged) {
@@ -11,7 +11,9 @@ function addCourse(semesters, semesterToBeChanged) {
 }
 
 function removeCourse(semesters, semesterToBeChanged, courseToBeRemoved) {
-  if (semesterToBeChanged.courses.length > 1) {
+  if (semesterToBeChanged.courses.length === 1 && semesters.length > 1) {
+    return semesters.filter((semester) => semester !== semesterToBeChanged);
+  } else if (semesterToBeChanged.courses.length > 1) {
     return semesters.map((semester) =>
       semester === semesterToBeChanged
         ? {

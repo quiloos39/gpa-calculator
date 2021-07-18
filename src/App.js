@@ -11,7 +11,6 @@ import SummaryTable from './components/SummaryTable';
 import ACTIONS from './actions';
 
 function reducer(semesters, { type, payload }) {
-  console.log(semesters);
   switch (type) {
     case ACTIONS.ADD_SEMESTER:
       return addSemester(semesters);
@@ -40,12 +39,16 @@ const Content = () => {
     <Box my={10}>
       <Container>
         <Grid container spacing={5}>
-          <Grid item lg={8}>
-            {semesters.map((semester, index) => (
-              <Semester key={index} semester={semester} dispatch={dispatch}>
+          <Grid item lg={8} xs={12}>
+            {semesters.map((semester) => (
+              <Semester
+                key={semester.id}
+                semester={semester}
+                dispatch={dispatch}
+              >
                 {semester.courses.map((course, index) => (
                   <Course
-                    key={index}
+                    key={course.id}
                     semester={semester}
                     course={course}
                     dispatch={dispatch}
@@ -60,7 +63,7 @@ const Content = () => {
               Add semester
             </Button>
           </Grid>
-          <Grid item lg={4}>
+          <Grid item lg={4} xs={12}>
             <SummaryTable semesters={semesters} />
           </Grid>
         </Grid>

@@ -1,7 +1,7 @@
 import { newCourse } from './course';
 
 function newSemester() {
-  return { courses: [newCourse()] };
+  return { id: Date.now(), courses: [newCourse()] };
 }
 
 function addSemester(semesters) {
