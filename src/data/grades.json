@@ -1,0 +1,70 @@
+[
+  {
+    "value": 4.0,
+    "letter": "AA"
+  },
+  {
+    "value": 3.5,
+    "letter": "BA"
+  },
+  {
+    "value": 3.0,
+    "letter": "BB"
+  },
+  {
+    "value": 2.5,
+    "letter": "CB"
+  },
+  {
+    "value": 2.0,
+    "letter": "CC"
+  },
+  {
+    "value": 1.5,
+    "letter": "DC"
+  },
+  {
+    "value": 1.0,
+    "letter": "DD"
+  },
+  {
+    "value": 0.5,
+    "letter": "FD"
+  },
+  {
+    "value": 0.0,
+    "letter": "FF"
+  },
+  {
+    "value": 0.0,
+    "letter": "NA"
+  },
+  {
+    "value": null,
+    "letter": "S"
+  },
+  {
+    "value": null,
+    "letter": "P"
+  },
+  {
+    "value": null,
+    "letter": "EX"
+  },
+  {
+    "value": null,
+    "letter": "I"
+  },
+  {
+    "value": null,
+    "letter": "W"
+  },
+  {
+    "value": null,
+    "letter": "PASS"
+  },
+  {
+    "value": null,
+    "letter": "FAIL"
+  }
+]
